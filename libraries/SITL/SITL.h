@@ -10,19 +10,19 @@
 #include <AP_Common/Location.h>
 #include <AP_Compass/AP_Compass.h>
 #include <AP_InertialSensor/AP_InertialSensor.h>
-#include "SIM_Buzzer.h"
-#include "SIM_Gripper_EPM.h"
-#include "SIM_Gripper_Servo.h"
-#include "SIM_I2C.h"
-#include "SIM_Parachute.h"
-#include "SIM_Precland.h"
-#include "SIM_Sprayer.h"
-#include "SIM_ToneAlarm.h"
-#include "SIM_EFI_MegaSquirt.h"
-#include "SIM_RichenPower.h"
-#include "SIM_FETtecOneWireESC.h"
-#include "SIM_IntelligentEnergy24.h"
-#include "SIM_Ship.h"
+// #include "SIM_Buzzer.h"
+// #include "SIM_Gripper_EPM.h"
+// #include "SIM_Gripper_Servo.h"
+// #include "SIM_I2C.h"
+// #include "SIM_Parachute.h"
+// #include "SIM_Precland.h"
+// #include "SIM_Sprayer.h"
+// #include "SIM_ToneAlarm.h"
+// #include "SIM_EFI_MegaSquirt.h"
+// #include "SIM_RichenPower.h"
+// #include "SIM_FETtecOneWireESC.h"
+// #include "SIM_IntelligentEnergy24.h"
+// #include "SIM_Ship.h"
 #include <AP_RangeFinder/AP_RangeFinder.h>
 
 namespace SITL {
