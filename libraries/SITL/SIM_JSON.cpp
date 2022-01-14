@@ -315,12 +315,12 @@ void JSON::recv_fdm(const struct sitl_input &input)
     update_position();
 
     // update range finder distances
-    for (uint8_t i=7; i<13; i++) {
-        if ((received_bitmask &  1U << i) == 0) {
-            continue;
-        }
-        rangefinder_m[i-7] = state.rng[i-7];
-    }
+    // for (uint8_t i=7; i<13; i++) {
+    //     if ((received_bitmask &  1U << i) == 0) {
+    //         continue;
+    //     }
+    //     rangefinder_m[i-7] = state.rng[i-7];
+    // }
 
     // update wind vane
     if ((received_bitmask & WIND_DIR) != 0) {
