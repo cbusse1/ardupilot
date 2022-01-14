@@ -78,7 +78,7 @@ private:
             Vector3f gyro;
             Vector3f accel_body;
         } imu;
-        Vector3d position;
+        Vector3f position;
         Vector3f attitude;
         Quaternion quaternion;
         Vector3f velocity;
