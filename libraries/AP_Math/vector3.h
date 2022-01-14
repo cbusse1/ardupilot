@@ -173,6 +173,15 @@ public:
     void rotate(enum Rotation rotation);
     void rotate_inverse(enum Rotation rotation);
 
+    // return xy components of a vector3 as a vector2.
+    // this returns a reference to the original vector3 xy data
+    const Vector2<T> &xy() const {
+        return *(const Vector2<T> *)this;
+    }
+    Vector2<T> &xy() {
+        return *(Vector2<T> *)this;
+    }
+
     // gets the length of this vector squared
     T  length_squared() const
     {
