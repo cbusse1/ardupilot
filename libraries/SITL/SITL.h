@@ -403,9 +403,9 @@ public:
     // convert a set of roll rates from body frame to earth frame
     static Vector3f convert_earth_frame(const Matrix3f &dcm, const Vector3f &gyro);
 
-    int i2c_ioctl(uint8_t i2c_operation, void *data) {
-        return i2c_sim.ioctl(i2c_operation, data);
-    }
+    // int i2c_ioctl(uint8_t i2c_operation, void *data) {
+    //     return i2c_sim.ioctl(i2c_operation, data);
+    // }
 
     // Sprayer sprayer_sim;
 
