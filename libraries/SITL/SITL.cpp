@@ -197,8 +197,6 @@ const AP_Param::GroupInfo SITL::var_info2[] = {
 };
 
 
-/* report SITL state via MAVLink */
-void SITL::simstate_send(mavlink_channel_t chan)
 /* report SITL state via MAVLink SIMSTATE*/
 void SITL::simstate_send(mavlink_channel_t chan) const
 {
