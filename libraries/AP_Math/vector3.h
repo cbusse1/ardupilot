@@ -60,6 +60,9 @@ template <typename T>
 class Matrix3;
 
 template <typename T>
+class Vector2;
+
+template <typename T>
 class Vector3
 {
 
