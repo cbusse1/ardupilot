@@ -436,9 +436,9 @@ public:
         uint32_t send_counter;
     } led;
 
-    EFI_MegaSquirt efi_ms;
+    // EFI_MegaSquirt efi_ms;
 
-    AP_Int8 led_layout;
+    // AP_Int8 led_layout;
 
     // vicon parameters
     // AP_Vector3f vicon_glitch;   // glitch in meters in vicon's local NED frame
