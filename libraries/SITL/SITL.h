@@ -279,7 +279,10 @@ public:
 
     uint16_t irlock_port;
 
-    void simstate_send(mavlink_channel_t chan);
+    time_t start_time_UTC;
+
+    void simstate_send(mavlink_channel_t chan) const;
+    void sim_state_send(mavlink_channel_t chan) const;
 
     void Log_Write_SIMSTATE();
 
