@@ -112,7 +112,8 @@ public:
 
     const Location &get_location() const { return location; }
 
-    const Vector3f &get_position() const { return position; }
+    // get position relative to home
+    Vector3d get_position_relhome() const;
 
     void get_attitude(Quaternion &attitude) const {
         attitude.from_rotation_matrix(dcm);
@@ -144,7 +145,7 @@ protected:
     Vector3f wind_ef;                    // m/s, earth frame
     Vector3f velocity_air_ef;            // velocity relative to airmass, earth frame
     Vector3f velocity_air_bf;            // velocity relative to airmass, body frame
-    Vector3f position;                   // meters, NED from origin
+    Vector3d position;                   // meters, NED from origin
     float mass;                          // kg
     float external_payload_mass = 0.0f;  // kg
     Vector3f accel_body;                 // m/s/s NED, body frame
