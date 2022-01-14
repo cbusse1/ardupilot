@@ -323,12 +323,12 @@ void JSON::recv_fdm(const struct sitl_input &input)
     // }
 
     // update wind vane
-    if ((received_bitmask & WIND_DIR) != 0) {
-        wind_vane_apparent.direction = state.wind_vane_apparent.direction;
-    }
-    if ((received_bitmask & WIND_SPD) != 0) {
-        wind_vane_apparent.speed = state.wind_vane_apparent.speed;
-    }
+    // if ((received_bitmask & WIND_DIR) != 0) {
+    //     wind_vane_apparent.direction = state.wind_vane_apparent.direction;
+    // }
+    // if ((received_bitmask & WIND_SPD) != 0) {
+    //     wind_vane_apparent.speed = state.wind_vane_apparent.speed;
+    // }
 
     double deltat;
     if (state.timestamp_s < last_timestamp_s) {
