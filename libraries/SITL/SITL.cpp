@@ -21,6 +21,9 @@
 
 #include <AP_Common/AP_Common.h>
 #include <AP_HAL/AP_HAL.h>
+
+#if CONFIG_HAL_BOARD == HAL_BOARD_SITL
+
 #include <GCS_MAVLink/GCS_MAVLink.h>
 #include <AP_Logger/AP_Logger.h>
 
@@ -219,6 +222,39 @@ void SITL::simstate_send(mavlink_channel_t chan)
                               state.longitude*1.0e7);
 }
 
+/* report SITL state via MAVLink SIM_STATE */
+void SITL::sim_state_send(mavlink_channel_t chan) const
+{
+    // convert to same conventions as DCM
+    float yaw = state.yawDeg;
+    if (yaw > 180) {
+        yaw -= 360;
+    }
+
+    mavlink_msg_sim_state_send(chan,
+            state.quaternion.q1,
+            state.quaternion.q2,
+            state.quaternion.q3,
+            state.quaternion.q4,
+            ToRad(state.rollDeg),
+            ToRad(state.pitchDeg),
+            ToRad(yaw),
+            state.xAccel,
+            state.yAccel,
+            state.zAccel,
+            radians(state.rollRate),
+            radians(state.pitchRate),
+            radians(state.yawRate),
+            state.latitude*1.0e7,
+            state.longitude*1.0e7,
+            (float)state.altitude,
+            0.0,
+            0.0,
+            state.speedN,
+            state.speedE,
+            state.speedD);
+}
+
 /* report SITL state to AP_Logger */
 void SITL::Log_Write_SIMSTATE()
 {
@@ -293,6 +329,14 @@ Vector3f SITL::convert_earth_frame(const Matrix3f &dcm, const Vector3f &gyro)
     return Vector3f(phiDot, thetaDot, psiDot);
 }
 
+// get the rangefinder reading for the desired rotation, returns -1 for no data
+float SITL::get_rangefinder(uint8_t instance) {
+    if (instance < RANGEFINDER_MAX_INSTANCES) {
+        return state.rangefinder_m[instance];
+    }
+    return -1;
+};
+
 } // namespace SITL
 
 
@@ -304,3 +348,5 @@ SITL::SITL *sitl()
 }
 
 };
+
+#endif // CONFIG_HAL_BOARD
