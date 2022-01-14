@@ -407,22 +407,22 @@ public:
         return i2c_sim.ioctl(i2c_operation, data);
     }
 
-    Sprayer sprayer_sim;
+    // Sprayer sprayer_sim;
 
     // simulated ship takeoffs
-    ShipSim shipsim;
+    // ShipSim shipsim;
 
-    Gripper_Servo gripper_sim;
-    Gripper_EPM gripper_epm_sim;
+    // Gripper_Servo gripper_sim;
+    // Gripper_EPM gripper_epm_sim;
 
-    Parachute parachute_sim;
-    Buzzer buzzer_sim;
-    I2C i2c_sim;
-    ToneAlarm tonealarm_sim;
-    SIM_Precland precland_sim;
-    RichenPower richenpower_sim;
-    IntelligentEnergy24 ie24_sim;
-    FETtecOneWireESC fetteconewireesc_sim;
+    // Parachute parachute_sim;
+    // Buzzer buzzer_sim;
+    // I2C i2c_sim;
+    // ToneAlarm tonealarm_sim;
+    // SIM_Precland precland_sim;
+    // RichenPower richenpower_sim;
+    // IntelligentEnergy24 ie24_sim;
+    // FETtecOneWireESC fetteconewireesc_sim;
 
     // ESC telemetry
     AP_Int8 esc_telem;
@@ -441,12 +441,12 @@ public:
     AP_Int8 led_layout;
 
     // vicon parameters
-    AP_Vector3f vicon_glitch;   // glitch in meters in vicon's local NED frame
-    AP_Int8 vicon_fail;         // trigger vicon failure
-    AP_Int16 vicon_yaw;         // vicon local yaw in degrees
-    AP_Int16 vicon_yaw_error;   // vicon yaw error in degrees (added to reported yaw sent to vehicle)
-    AP_Int8 vicon_type_mask;    // vicon message type mask (bit0:vision position estimate, bit1:vision speed estimate, bit2:vicon position estimate)
-    AP_Vector3f vicon_vel_glitch;   // velocity glitch in m/s in vicon's local frame
+    // AP_Vector3f vicon_glitch;   // glitch in meters in vicon's local NED frame
+    // AP_Int8 vicon_fail;         // trigger vicon failure
+    // AP_Int16 vicon_yaw;         // vicon local yaw in degrees
+    // AP_Int16 vicon_yaw_error;   // vicon yaw error in degrees (added to reported yaw sent to vehicle)
+    // AP_Int8 vicon_type_mask;    // vicon message type mask (bit0:vision position estimate, bit1:vision speed estimate, bit2:vicon position estimate)
+    // AP_Vector3f vicon_vel_glitch;   // velocity glitch in m/s in vicon's local frame
 
     // get the rangefinder reading for the desired instance, returns -1 for no data
     float get_rangefinder(uint8_t instance);
@@ -475,7 +475,7 @@ public:
     AP_Int8 accel_fail_mask;
 
     // Sailboat sim only
-    AP_Int8 sail_type;
+    // AP_Int8 sail_type;
 
 };
 
