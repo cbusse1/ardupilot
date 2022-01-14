@@ -129,6 +129,9 @@ public:
 
 protected:
     SITL *sitl;
+    // origin of position vector
+    Location origin;
+    // home location
     Location home;
     bool home_is_set;
     Location location;

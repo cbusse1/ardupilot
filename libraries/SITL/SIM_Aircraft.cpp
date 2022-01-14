@@ -78,6 +78,8 @@ Aircraft::Aircraft(const char *frame_str) :
 void Aircraft::set_start_location(const Location &start_loc, const float start_yaw)
 {
     home = start_loc;
+    origin = home;
+    position.xy().zero();
     home_yaw = start_yaw;
     home_is_set = true;
 
